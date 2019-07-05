@@ -12,14 +12,14 @@ def checker_x_by_8(x):
     try:
         return render_template("checker.html", num_rows=int(x), num_cols=8,colors=["salmon", "black"])
     except:
-        checker_8_by_8()
+        return checker_8_by_8()
 
 @app.route("/<x>/<y>")
 def checker_x_by_y(x,y):
     try:
         return render_template("checker.html", num_rows=int(x), num_cols=int(y),colors=["salmon", "black"])
     except:
-        checker_x_by_8(x)
+        return checker_x_by_8(x)
 
 def is_valid_color(str):
     valid_colors={"blue":1,"lightblue":1,"lightgreen":1,
@@ -36,7 +36,7 @@ def checker_with_light_color(x,y,color1):
     try:
         return render_template("checker.html", num_rows=int(x), num_cols=int(y),colors=[color1,"black"]) 
     except:
-        checker_x_by_8(x)
+        return checker_x_by_8(x)
 
 @app.route("/<x>/<y>/<color1>/<color2>")
 def checker_with_colors(x,y,color1,color2):
@@ -47,7 +47,7 @@ def checker_with_colors(x,y,color1,color2):
     try:
         return render_template("checker.html", num_rows=int(x), num_cols=int(y),colors=[color1,color2])
     except:
-        checker_x_by_8(x)
+        return checker_x_by_8(x)
 
 if __name__ == '__main__':
     app.run(debug=True)
