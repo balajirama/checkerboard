@@ -1,0 +1,17 @@
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+
+<h1>
+    My first trial on flask
+</h1>
+
+<table>
+    {% for row in range(num_rows) %}
+    <tr>
+        {% for col in range(num_cols) %}
+            {% set color=colors[(row+col)%2] %}
+            <td class="color{{ (row+col)%2 + 1 }}" style="background-color: {{color}}"></td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+
