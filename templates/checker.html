@@ -1,4 +1,9 @@
 {% extends "master.html" %}
+
+{% block title %}
+A checkerboard of size {{num_rows}}x{{num_cols}}
+{% endblock %}
+
 {% block content %}
 <table>
     {% for row in range(num_rows) %}
