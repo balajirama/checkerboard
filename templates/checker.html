@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
-
+{% extends "master.html" %}
+{% block content %}
 <table>
     {% for row in range(num_rows) %}
     <tr>
@@ -10,4 +10,4 @@
     </tr>
     {% endfor %}
 </table>
-
+{% endblock %}
