@@ -1,7 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, session
 from colour import Color
 
 app = Flask(__name__)
+app.secret_key = 'darksecret'
 
 
 @app.route("/")
